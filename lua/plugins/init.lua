@@ -12,8 +12,6 @@ return {
       require "configs.lspconfig"
     end,
   },
-  { "ThePrimeagen/vim-be-good", cmd = "VimBeGood", lazy = false },
-  -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
   {
     "mason-org/mason.nvim",

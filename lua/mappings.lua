@@ -16,3 +16,7 @@ map("n", "<A-Down>", "<cmd>m .+1<cr>==gl", { desc = "Move line down" })
 map("n", "<A-Up>", "<cmd>m .-2<cr>==gl", { desc = "Move line up" })
 
 map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
+
+-- show error
+--
+map("n", "gl", "vim.diagnostic.open_float")

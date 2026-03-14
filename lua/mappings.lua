@@ -19,4 +19,4 @@ map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
 -- show error
 --
-map("n", "gl", "vim.diagnostic.open_float")
+map("n", "gl", "vim.diagnostic.open_float()")

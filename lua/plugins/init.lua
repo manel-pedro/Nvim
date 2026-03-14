@@ -4,7 +4,11 @@ return {
     event = "BufWritePre", -- uncomment for format on save
     opts = require "configs.conform",
   },
-
+  {
+    "folke/which-key.nvim",
+    enabled = true,
+    lazy = false,
+  },
   -- These are some examples, uncomment them if you want to see them work!
   {
     "neovim/nvim-lspconfig",
@@ -28,8 +32,8 @@ return {
         "clangd",
         "clang-format",
 
-        -- Debugger (opcional mas útil)
         "codelldb",
+        "rust-analyzer",
       },
     },
   },
@@ -43,6 +47,7 @@ return {
         "vimdoc",
         "html",
         "css",
+        "java",
         "javascript",
         "typescript",
         "tsx",

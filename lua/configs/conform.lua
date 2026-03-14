@@ -6,6 +6,13 @@ local options = {
     cpp = { "clang-format" }, -- Usa o clang-format para C++
     css = { "prettier" },
     html = { "prettier" },
+    rust = { "rustfmt" },
+
+    javascript = { "prettier" },
+    typescript = { "prettier" },
+    javascriptreact = { "prettier" },
+    typescriptreact = { "prettier" },
+    json = { "prettier" },
   },
 
   format_on_save = {

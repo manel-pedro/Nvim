@@ -15,8 +15,12 @@ map("n", "<A-Down>", "<cmd>m .+1<cr>==gl", { desc = "Move line down" })
 map("n", "<A-Up>", "<cmd>m .-2<cr>==gl", { desc = "Move line up" })
 
 map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
-map("n", "gh", "vim.lsp.buf.hover()")
+--show info of the thing i am hovering
+map("n", "gh", vim.lsp.buf.hover, { desc = "LSP show documentation of hovering" })
 
 -- show error
 --
-map("n", "gl", "lua vim.diagnostic.open_float()")
+map("n", "gl", vim.diagnostic.open_float, { desc = "LSP show line diagnostic" })
+
+-- do sugested fix
+map("n", "g.", vim.lsp.buf.code_action, { desc = "LSP do the code_action" })

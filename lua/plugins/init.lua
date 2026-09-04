@@ -16,6 +16,21 @@ return {
       require "configs.lspconfig"
     end,
   },
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    -- Un-commented the nvim-web-devicons line because that's what NvChad uses
+    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
+
+    cmd = { "RenderMarkdown", "RenderMarkdownToggle" },
+    ft = { "markdown" },
+    event = { "BufReadPost", "BufNewFile" },
+
+    ---@module 'render-markdown'
+    ---@type render.md.UserConfig
+    opts = {
+      present = "obsidian",
+    },
+  },
   -- { import = "nvchad.blink.lazyspec" },
   {
     "mason-org/mason.nvim",

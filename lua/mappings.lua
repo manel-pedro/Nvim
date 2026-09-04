@@ -24,3 +24,14 @@ map("n", "gl", vim.diagnostic.open_float, { desc = "LSP show line diagnostic" })
 
 -- do sugested fix
 map("n", "g.", vim.lsp.buf.code_action, { desc = "LSP do the code_action" })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    map("n", "gp", "<cmd>RenderMarkdown preview<cr>", {
+      buffer = true, -- Crucial: deletes this mapping when switching away from a markdown file
+      silent = true,
+      desc = "Markdown Split Preview",
+    })
+  end,
+})

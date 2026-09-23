@@ -33,6 +33,27 @@ return {
   },
   -- { import = "nvchad.blink.lazyspec" },
   {
+    "lervag/vimtex",
+    lazy = false, -- we don't want to lazy load VimTeX
+    init = function()
+      -- macOS: compile continuously with latexmk and refresh the PDF in Skim.
+      vim.g.tex_flavor = "latex"
+      vim.g.vimtex_compiler_method = "latexmk"
+      vim.g.vimtex_compiler_latexmk = {
+        -- Keep the PDF and auxiliary files together in build/.
+        out_dir = "build",
+        executable = "/Library/TeX/texbin/latexmk",
+      }
+      vim.g.vimtex_view_method = "skim"
+      vim.g.vimtex_view_automatic = 1
+      vim.g.vimtex_view_skim_sync = 1
+      vim.g.vimtex_view_skim_activate = 1
+      vim.g.vimtex_quickfix_mode = 0
+      vim.opt.conceallevel = 1
+      vim.g.tex_conceal = "abdmg"
+    end,
+  },
+  {
     "mason-org/mason.nvim",
     opts = {
       ensure_installed = {

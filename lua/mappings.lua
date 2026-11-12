@@ -18,6 +18,9 @@ map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 --show info of the thing i am hovering
 map("n", "gh", vim.lsp.buf.hover, { desc = "LSP show documentation of hovering" })
 
+-- move in visual lines
+map("n", "gj", "j")
+map("n", "gk", "k")
 -- show error
 --
 map("n", "gl", vim.diagnostic.open_float, { desc = "LSP show line diagnostic" })
